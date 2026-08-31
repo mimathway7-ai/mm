@@ -1,0 +1,264 @@
+/*
+  Qoffa Smart — About hero v3
+  Design philosophy: Fresh Editorial Counter — image-first grocery storytelling,
+  deep forest glass, warm ivory canvas, lime accent, asymmetric copy panel,
+  and restrained motion matching the index/products banner system.
+  The existing Arabic copy and JavaScript remain untouched.
+*/
+:root {
+  --about-hero-ink: #13281f;
+  --about-hero-forest: #1b6b49;
+  --about-hero-lime: #d6ed80;
+  --about-hero-ivory: #f7f4ec;
+  --about-hero-line: rgba(19, 40, 31, .14);
+  --about-hero-spring: cubic-bezier(.16, 1, .3, 1);
+}
+
+body.about-page .about-hero {
+  position: relative;
+  isolation: isolate;
+  aspect-ratio: 2048 / 1143;
+  min-height: 0;
+  height: auto;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .88);
+  border-radius: 40px;
+  background-color: var(--about-hero-ivory);
+  background-image:
+    linear-gradient(90deg, rgba(247, 244, 236, .18) 0%, rgba(247, 244, 236, .08) 34%, rgba(17, 53, 35, .02) 64%, rgba(17, 53, 35, .12) 100%),
+    url('../images/qoffa-about-hero.png');
+  background-position: center, 56% center;
+  background-size: cover, cover;
+  box-shadow: 0 30px 80px rgba(27, 72, 50, .16);
+}
+
+body.about-page .about-hero::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: -130px;
+  bottom: -260px;
+  width: 520px;
+  height: 520px;
+  border: 1px solid rgba(27, 107, 73, .13);
+  border-radius: 50%;
+  box-shadow: 0 0 0 26px rgba(214, 237, 128, .13), 0 0 0 52px rgba(27, 107, 73, .06);
+  animation: aboutHeroOrbit 12s ease-in-out infinite;
+}
+
+body.about-page .about-hero::after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  top: 28px;
+  left: 28px;
+  width: 74px;
+  height: 74px;
+  border: 1px solid rgba(229, 191, 104, .42);
+  border-radius: 24px;
+  background: rgba(13, 51, 34, .2);
+  box-shadow: 0 14px 28px rgba(8, 31, 19, .12);
+  transform: rotate(12deg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+body.about-page .about-hero .container {
+  position: relative;
+  z-index: 1;
+  min-height: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+body.about-page .about-hero .container > .hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(56%, 700px);
+  min-height: 0;
+  margin-right: auto;
+  margin-left: 0;
+  padding: 38px 32px 38px 34px;
+  text-align: right;
+  border: 1px solid rgba(229, 191, 104, .86);
+  border-radius: 30px;
+  background: linear-gradient(135deg, rgba(13, 51, 34, .34), rgba(24, 76, 50, .16));
+  box-shadow: 0 22px 48px rgba(8, 31, 19, .14), inset 0 1px 0 rgba(255, 255, 255, .2);
+  backdrop-filter: blur(5px) saturate(1.16);
+  -webkit-backdrop-filter: blur(5px) saturate(1.16);
+  animation: aboutHeroEnter .8s var(--about-hero-spring) both;
+}
+
+body.about-page .about-hero .hero-content::before {
+  content: '';
+  display: block;
+  width: 46px;
+  height: 6px;
+  margin: 0 0 24px auto;
+  border-radius: 999px;
+  background: var(--about-hero-lime);
+  box-shadow: 0 0 0 7px rgba(214, 237, 128, .22);
+}
+
+body.about-page .about-hero .hero-title {
+  margin: 0 0 17px;
+  color: #fff;
+  font-size: clamp(3.6rem, 8vw, 7.3rem);
+  font-weight: 900;
+  letter-spacing: -.095em;
+  line-height: .9;
+  text-wrap: balance;
+}
+
+body.about-page .about-hero .hero-subtitle {
+  width: min(100%, 580px);
+  margin: 0 0 15px auto;
+  color: #d6ed80;
+  font-size: clamp(1.35rem, 2.55vw, 2.25rem);
+  font-weight: 900;
+  letter-spacing: -.05em;
+  line-height: 1.32;
+  text-wrap: balance;
+}
+
+body.about-page .about-hero .hero-description {
+  width: min(100%, 575px);
+  margin: 0 0 0 auto;
+  color: rgba(255, 255, 255, .82);
+  font-size: clamp(.98rem, 1.25vw, 1.14rem);
+  line-height: 1.95;
+  text-wrap: pretty;
+}
+
+body.about-page .about-hero .hero-content::after {
+  content: '';
+  position: absolute;
+  right: -22px;
+  bottom: 7px;
+  width: 92px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(229, 191, 104, .78));
+}
+
+@keyframes aboutHeroEnter {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes aboutHeroOrbit {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50% { transform: translate3d(10px, -8px, 0) rotate(5deg); }
+}
+
+@media (max-width: 980px) {
+  body.about-page .about-hero {
+    aspect-ratio: 1 / 1;
+    min-height: 0;
+    background-image:
+      linear-gradient(90deg, rgba(247, 244, 236, .16) 0%, rgba(247, 244, 236, .08) 48%, rgba(17, 53, 35, .12) 100%),
+      url('../images/qoffa-about-hero.png');
+    background-position: center, 56% center;
+    background-size: cover, cover;
+  }
+
+  body.about-page .about-hero .container {
+    min-height: 0;
+  }
+
+  body.about-page .about-hero .hero-content {
+    width: min(64%, 640px);
+  }
+}
+
+@media (max-width: 620px) {
+  body.about-page .about-hero {
+    width: calc(100% - 16px);
+    aspect-ratio: 1 / 1;
+    min-height: 0;
+    margin-top: 10px;
+    border-radius: 28px;
+    background-image:
+      linear-gradient(180deg, rgba(13, 51, 34, .01) 0%, rgba(13, 51, 34, .03) 28%, rgba(13, 51, 34, .16) 60%, rgba(13, 51, 34, .3) 100%),
+      url('../images/qoffa-about-hero.png');
+    background-position: center, 58% center;
+    background-size: cover, cover;
+  }
+
+  body.about-page .about-hero::before {
+    left: -230px;
+    bottom: -280px;
+    width: 480px;
+    height: 480px;
+  }
+
+  body.about-page .about-hero::after {
+    top: 18px;
+    left: 18px;
+    width: 52px;
+    height: 52px;
+    border-radius: 17px;
+  }
+
+  body.about-page .about-hero .container {
+    min-height: 0;
+    align-items: flex-end;
+  }
+
+  body.about-page .about-hero .container > .hero-content {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    margin: 0;
+    padding: 24px 18px 22px;
+    box-sizing: border-box;
+    border: 1px solid rgba(229, 191, 104, .78);
+    border-radius: 25px;
+    background: linear-gradient(145deg, rgba(13, 51, 34, .38), rgba(24, 76, 50, .18));
+    box-shadow: 0 16px 38px rgba(8, 31, 19, .13), inset 0 1px 0 rgba(255, 255, 255, .2);
+    backdrop-filter: blur(5px) saturate(1.16);
+    -webkit-backdrop-filter: blur(5px) saturate(1.16);
+  }
+
+  body.about-page .about-hero .hero-content::before {
+    width: 34px;
+    height: 5px;
+    margin-bottom: 18px;
+  }
+
+  body.about-page .about-hero .hero-title {
+    margin-bottom: 9px;
+    font-size: clamp(2.35rem, 12vw, 3.6rem);
+    line-height: .94;
+  }
+
+  body.about-page .about-hero .hero-subtitle,
+  body.about-page .about-hero .hero-description {
+    width: 100%;
+  }
+
+  body.about-page .about-hero .hero-subtitle {
+    margin-bottom: 8px;
+    font-size: clamp(1rem, 4.3vw, 1.25rem);
+    line-height: 1.34;
+  }
+
+  body.about-page .about-hero .hero-description {
+    font-size: clamp(.72rem, 3.2vw, .88rem);
+    line-height: 1.55;
+  }
+
+  body.about-page .about-hero .hero-content::after {
+    right: auto;
+    left: 20px;
+    bottom: 20px;
+    width: 54px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.about-page .about-hero::before,
+  body.about-page .about-hero .hero-content {
+    animation: none;
+  }
+}

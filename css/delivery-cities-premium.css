@@ -1,0 +1,288 @@
+/* Qoffa Smart — premium delivery areas */
+body.index-page .delivery-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #102c20;
+}
+
+body.index-page .delivery-section::before {
+  background:
+    linear-gradient(125deg, rgba(8, 38, 27, .98) 0%, rgba(13, 57, 39, .94) 42%, rgba(10, 40, 29, .78) 100%),
+    url('../images/generated/delivery-promise.png') center / cover;
+  opacity: 1;
+}
+
+body.index-page .delivery-section::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: min(42vw, 520px);
+  aspect-ratio: 1;
+  inset-inline-start: -12%;
+  bottom: -58%;
+  border-radius: 50%;
+  border: 1px solid rgba(214, 237, 128, .24);
+  box-shadow: 0 0 0 42px rgba(214, 237, 128, .035), 0 0 0 84px rgba(214, 237, 128, .025);
+  pointer-events: none;
+}
+
+body.index-page .delivery-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+body.index-page .delivery-section .section-header {
+  max-width: 780px;
+  margin-bottom: clamp(28px, 4vw, 44px);
+}
+
+body.index-page .delivery-section .section-title {
+  max-width: 720px;
+  font-size: clamp(2.15rem, 4.7vw, 4.65rem);
+  letter-spacing: -.07em;
+  text-wrap: balance;
+}
+
+body.index-page .delivery-section .section-subtitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 8px;
+  padding: 8px 13px;
+  border: 1px solid rgba(214, 237, 128, .24);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .07);
+  color: #dcebdd;
+  backdrop-filter: blur(10px);
+}
+
+body.index-page .delivery-section .section-subtitle::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--fresh-lime);
+  box-shadow: 0 0 0 5px rgba(214, 237, 128, .13);
+}
+
+body.index-page .delivery-cities {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0;
+}
+
+body.index-page .delivery-cities > .city-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+body.index-page .city-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr) 34px;
+  align-items: center;
+  gap: 17px;
+  min-height: 142px;
+  padding: 23px 25px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 28px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, .13), rgba(255, 255, 255, .045));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .12), 0 17px 35px rgba(3, 20, 12, .13);
+  color: #fff;
+  backdrop-filter: blur(16px) saturate(1.15);
+  -webkit-backdrop-filter: blur(16px) saturate(1.15);
+  transition: transform .45s var(--motion-spring, cubic-bezier(.16, 1, .3, 1)), border-color .35s ease, background-color .35s ease, box-shadow .35s ease;
+}
+
+body.index-page .city-card::before {
+  content: '';
+  position: absolute;
+  width: 126px;
+  height: 126px;
+  inset-inline-end: -56px;
+  top: -65px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(214, 237, 128, .22), transparent 68%);
+  pointer-events: none;
+  transition: transform .5s var(--motion-spring, ease);
+}
+
+body.index-page .city-card::after {
+  content: '↗';
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .08);
+  color: var(--fresh-lime);
+  font: 800 1rem/1 'DM Sans', sans-serif;
+  opacity: .7;
+  transition: transform .35s ease, opacity .35s ease, background-color .35s ease, color .35s ease;
+}
+
+body.index-page .city-card > i {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  margin: 0;
+  border: 1px solid rgba(214, 237, 128, .23);
+  border-radius: 19px;
+  background: rgba(214, 237, 128, .13);
+  color: var(--fresh-lime);
+  font-size: 1.22rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .13);
+  transition: transform .4s var(--motion-spring, ease), background-color .35s ease, color .35s ease;
+}
+
+body.index-page .city-card h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.12rem, 2vw, 1.38rem);
+  font-weight: 800;
+  letter-spacing: -.04em;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, .18);
+}
+
+body.index-page .city-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(214, 237, 128, .58);
+  background: linear-gradient(135deg, rgba(214, 237, 128, .2), rgba(255, 255, 255, .09));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), 0 25px 48px rgba(1, 16, 9, .28);
+}
+
+body.index-page .city-card:hover::before {
+  transform: scale(1.38) translate(-8px, 9px);
+}
+
+body.index-page .city-card:hover > i {
+  transform: rotate(-9deg) scale(1.08);
+  background: var(--fresh-lime);
+  color: var(--fresh-green);
+}
+
+body.index-page .city-card:hover::after {
+  transform: translate(-3px, -3px) rotate(-12deg);
+  opacity: 1;
+  background: var(--fresh-lime);
+  color: var(--fresh-green);
+}
+
+body.index-page .delivery-info {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+body.index-page .delivery-info p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 50px;
+  margin: 0;
+  padding: 12px 15px;
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-radius: 16px;
+  background: rgba(4, 27, 17, .29);
+  color: rgba(234, 245, 235, .86);
+  font-size: .87rem;
+  backdrop-filter: blur(8px);
+}
+
+body.index-page .delivery-info p i {
+  color: var(--fresh-lime);
+}
+
+@media (min-width: 421px) and (max-width: 600px) {
+  body.index-page .delivery-section .section-header {
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  body.index-page .delivery-section .section-subtitle {
+    justify-content: center;
+    font-size: .82rem;
+  }
+
+  body.index-page .delivery-cities {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  body.index-page .city-card {
+    grid-template-columns: 1fr;
+    align-content: space-between;
+    gap: 11px;
+    min-height: 166px;
+    padding: 18px;
+    border-radius: 23px;
+  }
+
+  body.index-page .city-card > i {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    font-size: 1rem;
+  }
+
+  body.index-page .city-card::after {
+    position: absolute;
+    inset-inline-end: 17px;
+    bottom: 17px;
+    width: 29px;
+    height: 29px;
+    font-size: .85rem;
+  }
+
+  body.index-page .city-card h3 {
+    font-size: 1.02rem;
+  }
+
+  body.index-page .delivery-cities > .city-card:last-child:nth-child(odd) {
+    grid-template-columns: 50px minmax(0, 1fr) 30px;
+    min-height: 122px;
+  }
+
+  body.index-page .delivery-info {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  body.index-page .delivery-info p {
+    min-height: 44px;
+    padding: 10px 12px;
+    font-size: .79rem;
+  }
+}
+
+@media (max-width: 420px) {
+  body.index-page .delivery-cities,
+  body.index-page .delivery-info {
+    grid-template-columns: 1fr;
+  }
+
+  body.index-page .delivery-cities > .city-card:last-child:nth-child(odd) {
+    grid-column: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.index-page .city-card,
+  body.index-page .city-card:hover,
+  body.index-page .city-card::before,
+  body.index-page .city-card > i,
+  body.index-page .city-card::after {
+    transform: none;
+  }
+}

@@ -1,0 +1,292 @@
+/* Qoffa Smart — premium ordering journey */
+body.index-page .how-it-works {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 94% 8%, rgba(214, 237, 128, .38), transparent 22%),
+    linear-gradient(145deg, #f7f4ec 0%, #edf5e6 52%, #f9fbf5 100%);
+}
+
+body.index-page .how-it-works::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .55;
+  background-image: radial-gradient(rgba(28, 107, 73, .16) .8px, transparent .8px);
+  background-size: 16px 16px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 20%, #000 78%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 20%, #000 78%, transparent);
+}
+
+body.index-page .how-it-works::after {
+  content: '';
+  position: absolute;
+  width: min(46vw, 620px);
+  aspect-ratio: 1;
+  inset-inline-start: -17%;
+  bottom: -70%;
+  border: 1px solid rgba(28, 107, 73, .11);
+  border-radius: 50%;
+  box-shadow: 0 0 0 42px rgba(28, 107, 73, .03), 0 0 0 84px rgba(28, 107, 73, .02);
+  pointer-events: none;
+}
+
+body.index-page .how-it-works .container {
+  position: relative;
+  z-index: 1;
+}
+
+body.index-page .how-it-works .section-header {
+  max-width: 790px;
+  margin-bottom: clamp(30px, 4vw, 46px);
+}
+
+body.index-page .how-it-works .section-title {
+  max-width: 740px;
+  font-size: clamp(2.15rem, 4.7vw, 4.6rem);
+  letter-spacing: -.075em;
+  text-wrap: balance;
+}
+
+body.index-page .how-it-works .section-subtitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 9px;
+  padding: 8px 13px;
+  border: 1px solid rgba(28, 107, 73, .13);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .6);
+  color: #61736a;
+  backdrop-filter: blur(10px);
+}
+
+body.index-page .how-it-works .section-subtitle::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--fresh-green);
+  box-shadow: 0 0 0 5px rgba(28, 107, 73, .1);
+}
+
+body.index-page .steps-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  position: relative;
+}
+
+body.index-page .steps-container > .step-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+body.index-page .how-it-works .step-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 248px;
+  padding: clamp(25px, 3vw, 34px);
+  overflow: hidden;
+  border: 1px solid rgba(28, 107, 73, .13);
+  border-radius: 30px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, .9), rgba(255, 255, 255, .62));
+  box-shadow: 0 16px 38px rgba(20, 58, 37, .075), inset 0 1px 0 rgba(255, 255, 255, .75);
+  text-align: right;
+  transition: transform .45s var(--motion-spring, cubic-bezier(.16, 1, .3, 1)), box-shadow .35s ease, border-color .35s ease, background-color .35s ease;
+}
+
+body.index-page .how-it-works .step-card::before {
+  content: '';
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  inset-inline-end: -86px;
+  top: -88px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(214, 237, 128, .52), rgba(214, 237, 128, 0) 69%);
+  pointer-events: none;
+  transition: transform .55s var(--motion-spring, ease);
+}
+
+body.index-page .how-it-works .step-card::after {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0;
+  bottom: 0;
+  width: 0;
+  height: 4px;
+  border-radius: 4px 4px 0 0;
+  background: linear-gradient(90deg, var(--fresh-lime), var(--fresh-green));
+  transition: width .45s var(--motion-spring, ease);
+}
+
+body.index-page .how-it-works .step-number {
+  position: absolute;
+  z-index: 2;
+  inset-inline-end: clamp(22px, 3vw, 30px);
+  top: clamp(21px, 3vw, 29px);
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid rgba(28, 107, 73, .12);
+  border-radius: 14px;
+  background: var(--fresh-lime);
+  color: var(--fresh-ink);
+  box-shadow: 0 8px 18px rgba(28, 107, 73, .12), inset 0 1px 0 rgba(255, 255, 255, .48);
+  font: 800 1.12rem/1 'DM Sans', 'Tajawal', sans-serif;
+  transition: transform .42s var(--motion-spring, ease), background-color .3s ease, color .3s ease;
+}
+
+body.index-page .how-it-works .step-icon {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 66px;
+  height: 66px;
+  place-items: center;
+  margin: 0 0 24px;
+  border: 1px solid rgba(28, 107, 73, .12);
+  border-radius: 21px;
+  background: var(--fresh-mint);
+  color: var(--fresh-green);
+  font-size: 1.5rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .82);
+  transition: transform .45s var(--motion-spring, ease), background-color .3s ease, color .3s ease;
+}
+
+body.index-page .how-it-works .step-card h3 {
+  position: relative;
+  z-index: 1;
+  max-width: calc(100% - 55px);
+  margin: 0 0 10px;
+  color: var(--fresh-ink);
+  font-size: clamp(1.25rem, 2vw, 1.62rem);
+  line-height: 1.2;
+  letter-spacing: -.05em;
+}
+
+body.index-page .how-it-works .step-card p {
+  position: relative;
+  z-index: 1;
+  max-width: 39ch;
+  margin: 0;
+  color: #66766d;
+  font-size: .98rem;
+  line-height: 1.8;
+}
+
+body.index-page .how-it-works .step-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(28, 107, 73, .33);
+  background: #fff;
+  box-shadow: 0 27px 54px rgba(17, 59, 37, .14), inset 0 1px 0 #fff;
+}
+
+body.index-page .how-it-works .step-card:hover::before {
+  transform: scale(1.34) translate(-8px, 9px);
+}
+
+body.index-page .how-it-works .step-card:hover::after {
+  width: 100%;
+}
+
+body.index-page .how-it-works .step-card:hover .step-number {
+  transform: rotate(-8deg) scale(1.08);
+  background: var(--fresh-green);
+  color: #fff;
+}
+
+body.index-page .how-it-works .step-card:hover .step-icon {
+  transform: rotate(8deg) scale(1.08);
+  background: var(--fresh-lime);
+  color: var(--fresh-green);
+}
+
+body.index-page .how-it-works .step-card:nth-child(2)::before,
+body.index-page .how-it-works .step-card:nth-child(3)::before {
+  background: radial-gradient(circle, rgba(241, 154, 87, .26), rgba(241, 154, 87, 0) 69%);
+}
+
+body.index-page .how-it-works .step-card:nth-child(4)::before {
+  background: radial-gradient(circle, rgba(28, 107, 73, .25), rgba(28, 107, 73, 0) 69%);
+}
+
+@media (min-width: 421px) and (max-width: 600px) {
+  body.index-page .how-it-works .section-header {
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  body.index-page .how-it-works .section-subtitle {
+    justify-content: center;
+    font-size: .82rem;
+  }
+
+  body.index-page .steps-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  body.index-page .how-it-works .step-card {
+    min-height: 230px;
+    padding: 20px;
+    border-radius: 24px;
+  }
+
+  body.index-page .how-it-works .step-number {
+    width: 35px;
+    height: 35px;
+    inset-inline-end: 17px;
+    top: 17px;
+    border-radius: 12px;
+    font-size: .96rem;
+  }
+
+  body.index-page .how-it-works .step-icon {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 19px;
+    border-radius: 17px;
+    font-size: 1.15rem;
+  }
+
+  body.index-page .how-it-works .step-card h3 {
+    max-width: calc(100% - 41px);
+    margin-bottom: 7px;
+    font-size: 1.08rem;
+    line-height: 1.28;
+  }
+
+  body.index-page .how-it-works .step-card p {
+    font-size: .82rem;
+    line-height: 1.65;
+  }
+
+  body.index-page .steps-container > .step-card:last-child:nth-child(odd) {
+    min-height: 162px;
+  }
+}
+
+@media (max-width: 420px) {
+  body.index-page .steps-container {
+    grid-template-columns: 1fr;
+  }
+
+  body.index-page .steps-container > .step-card:last-child:nth-child(odd) {
+    grid-column: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.index-page .how-it-works .step-card,
+  body.index-page .how-it-works .step-card:hover,
+  body.index-page .how-it-works .step-card::before,
+  body.index-page .how-it-works .step-number,
+  body.index-page .how-it-works .step-icon {
+    transform: none;
+  }
+}

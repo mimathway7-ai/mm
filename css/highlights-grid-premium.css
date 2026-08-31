@@ -1,0 +1,74 @@
+/* Qoffa Smart — highlights grid: 2 cards per row, last odd card spans both columns */
+body.index-page .highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 24px);
+}
+
+body.index-page .highlight-card:nth-child(2),
+body.index-page .highlight-card:nth-child(2):hover {
+  transform: none;
+}
+
+body.index-page .highlights-grid > .highlight-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  min-height: 176px;
+}
+
+body.index-page .highlights-grid > .highlight-card:last-child:nth-child(odd) .highlight-icon {
+  margin-bottom: 16px;
+}
+
+@media (min-width: 421px) and (max-width: 600px) {
+  body.index-page .highlights-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  body.index-page .highlight-card {
+    min-height: 184px;
+    padding: 20px;
+    border-radius: 23px;
+  }
+
+  body.index-page .highlight-icon {
+    width: 46px;
+    height: 46px;
+    margin-bottom: 17px;
+    border-radius: 15px;
+    font-size: 1.05rem;
+  }
+
+  body.index-page .highlight-card h3 {
+    font-size: 1rem;
+    line-height: 1.42;
+    margin-bottom: 6px;
+  }
+
+  body.index-page .highlight-card p {
+    font-size: .82rem;
+    line-height: 1.5;
+  }
+
+  body.index-page .highlights-grid > .highlight-card:last-child:nth-child(odd) {
+    min-height: 150px;
+  }
+}
+
+@media (max-width: 420px) {
+  body.index-page .highlights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.index-page .highlights-grid > .highlight-card:last-child:nth-child(odd) {
+    grid-column: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.index-page .highlight-card,
+  body.index-page .highlight-card:nth-child(2),
+  body.index-page .highlight-card:nth-child(2):hover {
+    transform: none;
+  }
+}

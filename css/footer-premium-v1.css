@@ -1,0 +1,387 @@
+/*
+  Qoffa Smart — Footer premium unified v1
+  Design system: forest base, warm ivory/gold detailing, lime social accents.
+  Shared by every public page to guarantee visual consistency.
+*/
+:root {
+  --footer-forest: #092b1d;
+  --footer-deep: #061c13;
+  --footer-green: #1b6b49;
+  --footer-lime: #d6ed80;
+  --footer-gold: #e5bf68;
+  --footer-ink: #eff7ee;
+  --footer-muted: rgba(239, 247, 238, .72);
+  --footer-ease: cubic-bezier(.16, 1, .3, 1);
+}
+
+footer.qoffa-premium-footer {
+  position: relative;
+  isolation: isolate;
+  margin-top: clamp(64px, 9vw, 118px);
+  overflow: hidden;
+  border-top: 1px solid rgba(214, 237, 128, .17);
+  background:
+    radial-gradient(circle at 7% 8%, rgba(214, 237, 128, .12), transparent 23rem),
+    radial-gradient(circle at 92% 79%, rgba(229, 191, 104, .1), transparent 24rem),
+    linear-gradient(135deg, var(--footer-forest), var(--footer-deep));
+  color: var(--footer-ink);
+  font-family: 'Cairo', sans-serif;
+}
+footer.qoffa-premium-footer::before {
+  content: 'QOFFA';
+  position: absolute;
+  z-index: -1;
+  top: -37px;
+  left: -19px;
+  color: rgba(214, 237, 128, .045);
+  font: 900 clamp(10rem, 24vw, 24rem)/.75 'Cairo', sans-serif;
+  letter-spacing: -.12em;
+  pointer-events: none;
+}
+footer.qoffa-premium-footer::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  right: -126px;
+  bottom: -165px;
+  width: 380px;
+  height: 380px;
+  border: 1px solid rgba(229, 191, 104, .2);
+  border-radius: 50%;
+  box-shadow: 0 0 0 27px rgba(229, 191, 104, .04), 0 0 0 54px rgba(214, 237, 128, .035);
+  pointer-events: none;
+}
+footer.qoffa-premium-footer > .container {
+  position: relative;
+  width: min(calc(100% - 40px), 1240px);
+  max-width: none;
+  margin: 0 auto;
+  padding: clamp(50px, 7vw, 78px) 0 0;
+}
+footer.qoffa-premium-footer .footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: clamp(28px, 4vw, 54px);
+  align-items: start;
+}
+footer.qoffa-premium-footer .footer-col {
+  min-width: 0;
+}
+footer.qoffa-premium-footer .footer-col:first-child {
+  grid-column: span 2;
+  max-width: 450px;
+}
+footer.qoffa-premium-footer .footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 14px;
+  color: #fff;
+  text-decoration: none;
+}
+footer.qoffa-premium-footer .footer-logo img {
+  width: 47px;
+  height: 47px;
+  flex: 0 0 47px;
+  padding: 5px;
+  border: 1px solid rgba(214, 237, 128, .29);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, .09);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .13);
+  object-fit: contain;
+}
+footer.qoffa-premium-footer .footer-logo h3 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.45rem, 2.25vw, 1.85rem);
+  font-weight: 900;
+  letter-spacing: -.065em;
+}
+footer.qoffa-premium-footer .footer-description {
+  max-width: 375px;
+  margin: 0 0 22px;
+  color: var(--footer-muted);
+  font-size: .9rem;
+  line-height: 1.95;
+}
+footer.qoffa-premium-footer .footer-col h4 {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 7px 0 18px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 900;
+}
+footer.qoffa-premium-footer .footer-col h4::after {
+  content: '';
+  width: 22px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--footer-lime);
+  box-shadow: 0 0 0 5px rgba(214, 237, 128, .1);
+}
+footer.qoffa-premium-footer .social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  direction: ltr;
+}
+footer.qoffa-premium-footer .social-link {
+  display: inline-grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .17);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, .07);
+  color: var(--footer-ink);
+  font-size: 1rem;
+  text-decoration: none;
+  transition: transform .25s var(--footer-ease), background .25s ease, border-color .25s ease, color .25s ease;
+}
+footer.qoffa-premium-footer .social-link:hover,
+footer.qoffa-premium-footer .social-link:focus-visible {
+  transform: translateY(-5px) rotate(-4deg);
+  border-color: rgba(214, 237, 128, .78);
+  background: var(--footer-lime);
+  color: var(--footer-forest);
+  outline: none;
+}
+footer.qoffa-premium-footer .social-link[data-platform="whatsapp"]:hover { background: #25d366; border-color: #25d366; color: #fff; }
+footer.qoffa-premium-footer .social-link[data-platform="instagram"]:hover { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); border-color: #fcb045; color: #fff; }
+footer.qoffa-premium-footer .social-link[data-platform="facebook"]:hover { background: #1877f2; border-color: #1877f2; color: #fff; }
+footer.qoffa-premium-footer .social-link[data-platform="tiktok"]:hover { background: #121212; border-color: #fff; color: #fff; }
+footer.qoffa-premium-footer .social-link[data-platform="linkedin"]:hover { background: #0a66c2; border-color: #0a66c2; color: #fff; }
+footer.qoffa-premium-footer .footer-links,
+footer.qoffa-premium-footer .contact-info {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+footer.qoffa-premium-footer .footer-links li,
+footer.qoffa-premium-footer .contact-item {
+  min-width: 0;
+}
+footer.qoffa-premium-footer .footer-links a,
+footer.qoffa-premium-footer .contact-item,
+footer.qoffa-premium-footer .contact-item a {
+  color: var(--footer-muted);
+  font-size: .86rem;
+  line-height: 1.7;
+  text-decoration: none;
+}
+footer.qoffa-premium-footer .footer-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform .23s var(--footer-ease), color .23s ease;
+}
+footer.qoffa-premium-footer .footer-links a:hover,
+footer.qoffa-premium-footer .footer-links a:focus-visible,
+footer.qoffa-premium-footer .contact-item a:hover,
+footer.qoffa-premium-footer .contact-item a:focus-visible {
+  color: var(--footer-lime);
+  outline: none;
+}
+footer.qoffa-premium-footer .footer-links a:hover { transform: translateX(-4px); }
+footer.qoffa-premium-footer .footer-links i,
+footer.qoffa-premium-footer .contact-item > i {
+  width: 18px;
+  color: var(--footer-lime);
+  text-align: center;
+}
+footer.qoffa-premium-footer .contact-item {
+  position: relative;
+  display: block;
+  min-height: 43px;
+  padding: 10px 30px 10px 35px;
+  overflow: hidden;
+  border: 1px solid rgba(239, 247, 238, .25);
+  border-radius: 11px;
+  background: rgba(255, 255, 255, .065);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .04);
+  transition: transform .23s var(--footer-ease), border-color .23s ease, background .23s ease;
+}
+footer.qoffa-premium-footer .contact-item::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  width: 9px;
+  height: 25px;
+  border-radius: 999px;
+  background: var(--footer-lime);
+  transform: translateY(-50%);
+  box-shadow: 0 0 0 4px rgba(214, 237, 128, .07);
+}
+footer.qoffa-premium-footer .contact-item:hover {
+  transform: translateX(-4px);
+  border-color: rgba(214, 237, 128, .55);
+  background: rgba(255, 255, 255, .1);
+}
+footer.qoffa-premium-footer .contact-item > i {
+  position: absolute;
+  top: 50%;
+  left: 11px;
+  width: 16px;
+  color: var(--footer-lime);
+  font-size: .84rem;
+  text-align: center;
+  transform: translateY(-50%);
+}
+footer.qoffa-premium-footer .footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  margin-top: clamp(36px, 5vw, 56px);
+  padding: 19px 0 21px;
+  border-top: 1px solid rgba(255, 255, 255, .12);
+}
+footer.qoffa-premium-footer .footer-bottom p,
+footer.qoffa-premium-footer .footer-policies {
+  margin: 0;
+  color: rgba(239, 247, 238, .69);
+  font-size: .76rem;
+}
+footer.qoffa-premium-footer .footer-policies {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+footer.qoffa-premium-footer .footer-policies a {
+  color: rgba(239, 247, 238, .88);
+  text-decoration: none;
+  transition: color .2s ease;
+}
+footer.qoffa-premium-footer .footer-policies a:hover { color: var(--footer-lime); }
+
+@media (max-width: 680px) {
+  footer.qoffa-premium-footer { margin-top: 54px; }
+  footer.qoffa-premium-footer > .container { width: calc(100% - 32px); padding-top: 42px; }
+  footer.qoffa-premium-footer .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 17px; }
+  footer.qoffa-premium-footer .footer-col:first-child { grid-column: 1 / -1; max-width: none; }
+  footer.qoffa-premium-footer .footer-col h4 { margin-top: 0; font-size: .92rem; }
+  footer.qoffa-premium-footer .footer-description { max-width: 350px; font-size: .82rem; }
+  footer.qoffa-premium-footer .footer-links a,
+  footer.qoffa-premium-footer .contact-item,
+  footer.qoffa-premium-footer .contact-item a { font-size: .77rem; }
+  footer.qoffa-premium-footer .contact-item { min-height: 39px; padding: 8px 25px 8px 30px; font-size: .7rem; }
+  footer.qoffa-premium-footer .contact-item::after { right: 8px; width: 7px; height: 21px; }
+  footer.qoffa-premium-footer .contact-item > i { left: 9px; font-size: .72rem; }
+  footer.qoffa-premium-footer .footer-bottom { display: grid; gap: 12px; text-align: center; justify-content: stretch; }
+  footer.qoffa-premium-footer .footer-policies { justify-content: center; }
+}
+@media (max-width: 390px) {
+  footer.qoffa-premium-footer .footer-grid { grid-template-columns: 1fr; }
+  footer.qoffa-premium-footer .footer-col:first-child { grid-column: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  footer.qoffa-premium-footer .social-link,
+  footer.qoffa-premium-footer .footer-links a { transition: none; }
+}
+
+/* Contact SVGs are embedded so the five icons render even if the icon font is unavailable. */
+footer.qoffa-premium-footer .contact-item > i { display: none !important; }
+footer.qoffa-premium-footer .contact-item::before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 11px;
+  width: 16px;
+  height: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+  transform: translateY(-50%);
+}
+footer.qoffa-premium-footer .contact-item:has(> .fa-phone-alt)::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d6ed80' stroke-width='2.25' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.4 2.1L8 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.6A2 2 0 0 1 22 16.9Z'/%3E%3C/svg%3E");
+}
+footer.qoffa-premium-footer .contact-item:has(> .fa-whatsapp)::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='%23d6ed80' d='M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.6-138c-5.6-2.8-33.2-16.4-38.4-18.2-5.1-1.9-8.9-2.8-12.6 2.8s-14.5 18.2-17.8 22-6.5 4.2-12.1 1.4c-33.2-16.6-55-29.6-76.9-67.1-5.8-10 5.8-9.3 16.6-30.9 1.9-3.8.9-7-.5-9.8-1.4-2.8-12.6-30.3-17.3-41.4-4.8-11.5-9.6-9.9-13.1-10.1-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 7-5.1 5.6-19.4 19-19.4 46.3s19.9 53.7 22.6 57.4c2.8 3.7 39.1 59.7 94.8 83.7 13.2 5.7 23.5 9.1 31.5 11.7 13.2 4.2 25.2 3.6 34.7 2.2 10.6-1.6 33.2-13.6 37.9-26.8 4.7-13.2 4.7-24.5 3.3-26.8-1.4-2.5-5.1-3.9-10.7-6.6z'/%3E%3C/svg%3E");
+}
+footer.qoffa-premium-footer .contact-item:has(> .fa-envelope)::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d6ed80' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='5' width='18' height='14' rx='2'/%3E%3Cpath d='m3 7 9 6 9-6'/%3E%3C/svg%3E");
+}
+footer.qoffa-premium-footer .contact-item:has(> .fa-clock)::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d6ed80' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='8.5'/%3E%3Cpath d='M12 7v5l3.5 2'/%3E%3C/svg%3E");
+}
+footer.qoffa-premium-footer .contact-item:has(> .fa-map-marker-alt)::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d6ed80' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z'/%3E%3Ccircle cx='12' cy='10' r='2.4'/%3E%3C/svg%3E");
+}
+@media (max-width: 560px) {
+  footer.qoffa-premium-footer .contact-item::before { left: 9px; width: 14px; height: 14px; background-size: 14px 14px; }
+}
+
+/* Floating WhatsApp — shared across all public pages, independent from Font Awesome. */
+.whatsapp-float {
+  position: fixed;
+  z-index: 9000;
+  right: clamp(16px, 2.6vw, 28px);
+  bottom: clamp(16px, 2.6vw, 28px);
+  display: grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, .38);
+  border-radius: 18px;
+  background: linear-gradient(145deg, #30da73 0%, #1aaf59 100%);
+  box-shadow: 0 14px 31px rgba(7, 58, 31, .3), inset 0 1px 0 rgba(255, 255, 255, .36);
+  color: #fff;
+  text-decoration: none;
+  isolation: isolate;
+  transition: box-shadow .24s var(--footer-ease), filter .24s ease;
+}
+.whatsapp-float > i { display: none !important; }
+.whatsapp-float::before {
+  content: '';
+  width: 26px;
+  height: 26px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='%23ffffff' d='M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.6-138c-5.6-2.8-33.2-16.4-38.4-18.2-5.1-1.9-8.9-2.8-12.6 2.8s-14.5 18.2-17.8 22-6.5 4.2-12.1 1.4c-33.2-16.6-55-29.6-76.9-67.1-5.8-10 5.8-9.3 16.6-30.9 1.9-3.8.9-7-.5-9.8-1.4-2.8-12.6-30.3-17.3-41.4-4.8-11.5-9.6-9.9-13.1-10.1-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 7-5.1 5.6-19.4 19-19.4 46.3s19.9 53.7 22.6 57.4c2.8 3.7 39.1 59.7 94.8 83.7 13.2 5.7 23.5 9.1 31.5 11.7 13.2 4.2 25.2 3.6 34.7 2.2 10.6-1.6 33.2-13.6 37.9-26.8 4.7-13.2 4.7-24.5 3.3-26.8-1.4-2.5-5.1-3.9-10.7-6.6z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.whatsapp-float::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: -7px;
+  border: 1px solid rgba(48, 218, 115, .28);
+  border-radius: 22px;
+  opacity: .65;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .whatsapp-float { animation: qoffa-whatsapp-float 3.8s cubic-bezier(.45, 0, .25, 1) infinite; }
+  .whatsapp-float::after { animation: qoffa-whatsapp-halo 3.8s cubic-bezier(.45, 0, .25, 1) infinite; }
+}
+@keyframes qoffa-whatsapp-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes qoffa-whatsapp-halo {
+  0%, 100% { transform: scale(.94); opacity: .32; }
+  50% { transform: scale(1.08); opacity: .08; }
+}
+.whatsapp-float:hover,
+.whatsapp-float:focus-visible {
+  animation-play-state: paused;
+  filter: brightness(1.04) saturate(1.05);
+  box-shadow: 0 18px 36px rgba(7, 58, 31, .38), inset 0 1px 0 rgba(255, 255, 255, .42);
+  outline: none;
+}
+.whatsapp-float:active { transform: translateY(-2px) scale(.96); }
+@media (max-width: 560px) {
+  .whatsapp-float { right: 14px; bottom: 14px; width: 42px; height: 42px; border-radius: 14px; }
+  .whatsapp-float::before { width: 20px; height: 20px; }
+  .whatsapp-float::after { inset: -5px; border-radius: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-float,
+  .whatsapp-float::after { animation: none !important; }
+}

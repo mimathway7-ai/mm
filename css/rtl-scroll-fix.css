@@ -1,0 +1,87 @@
+/* Qoffa Smart — Arabic reading and scrolling direction
+   Keep the document and every horizontally scrollable commerce surface in RTL.
+   This is intentionally an isolated CSS fix: no copy, cart logic, carousel logic or Baserow code changes. */
+
+html[dir='rtl'] {
+  direction: rtl !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+html[dir='rtl'] body {
+  direction: rtl !important;
+  max-width: 100% !important;
+  overflow-x: clip !important;
+  overscroll-behavior-x: none !important;
+}
+
+html[dir='rtl'] #mainHeader,
+html[dir='rtl'] main,
+html[dir='rtl'] footer,
+html[dir='rtl'] .cart-sidebar,
+html[dir='rtl'] .confirmation-modal,
+html[dir='rtl'] .toast-container,
+html[dir='rtl'] .modal-overlay {
+  direction: rtl !important;
+}
+
+/* Arabic horizontal surfaces: first content begins at the right edge and remains touch-scrollable. */
+html[dir='rtl'] .variable-weight-scroll,
+html[dir='rtl'] .quick-nav,
+html[dir='rtl'] .products-filter,
+html[dir='rtl'] .product-detail-related-scroll,
+html[dir='rtl'] [data-horizontal-scroll] {
+  direction: rtl !important;
+  flex-direction: row !important;
+  overscroll-behavior-inline: contain !important;
+  scroll-padding-inline: .75rem !important;
+}
+
+html[dir='rtl'] .variable-weight-wrapper {
+  direction: rtl !important;
+}
+
+html[dir='rtl'] .variable-weight-scroll > *,
+html[dir='rtl'] .quick-nav > *,
+html[dir='rtl'] .products-filter > *,
+html[dir='rtl'] .product-detail-related-scroll > *,
+html[dir='rtl'] [data-horizontal-scroll] > * {
+  direction: rtl !important;
+}
+
+/* Keep the carousel navigation itself intuitive in Arabic: previous at right, next at left. */
+html[dir='rtl'] .variable-weight-wrapper .vw-nav-prev {
+  order: 0 !important;
+}
+
+html[dir='rtl'] .variable-weight-wrapper .vw-nav-next {
+  order: 2 !important;
+}
+
+html[dir='rtl'] .variable-weight-wrapper .variable-weight-scroll {
+  order: 1 !important;
+}
+
+/* Prevent transformed slides and decorative artwork from creating a phantom document scrollbar. */
+html[dir='rtl'] .banner-carousel,
+html[dir='rtl'] .banner-carousel * {
+  max-inline-size: 100%;
+}
+
+@media (max-width: 820px) {
+  html[dir='rtl'] .quick-nav,
+  html[dir='rtl'] .products-filter,
+  html[dir='rtl'] .variable-weight-scroll {
+    touch-action: pan-x pan-y !important;
+    scroll-snap-stop: always !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[dir='rtl'] .variable-weight-scroll,
+  html[dir='rtl'] .quick-nav,
+  html[dir='rtl'] .products-filter,
+  html[dir='rtl'] [data-horizontal-scroll] {
+    scroll-behavior: auto !important;
+  }
+}

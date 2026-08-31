@@ -1,0 +1,338 @@
+/* Qoffa Smart — premium trust signals */
+body.index-page .why-us {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 90% 6%, rgba(214, 237, 128, .17), transparent 25%),
+    radial-gradient(circle at 5% 92%, rgba(99, 181, 133, .18), transparent 28%),
+    linear-gradient(135deg, #0c2c20 0%, #104634 55%, #0a2d20 100%);
+}
+
+body.index-page .why-us::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  opacity: .35;
+  background-image: linear-gradient(rgba(214, 237, 128, .08) 1px, transparent 1px), linear-gradient(90deg, rgba(214, 237, 128, .08) 1px, transparent 1px);
+  background-size: 54px 54px;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000, transparent 76%);
+  mask-image: radial-gradient(ellipse at center, #000, transparent 76%);
+  pointer-events: none;
+}
+
+body.index-page .why-us::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: min(43vw, 570px);
+  aspect-ratio: 1;
+  inset-inline-end: -12%;
+  bottom: -65%;
+  border: 1px solid rgba(214, 237, 128, .2);
+  border-radius: 50%;
+  box-shadow: 0 0 0 42px rgba(214, 237, 128, .025), 0 0 0 84px rgba(214, 237, 128, .018);
+  pointer-events: none;
+}
+
+body.index-page .why-us .container {
+  position: relative;
+  z-index: 1;
+}
+
+body.index-page .why-us .section-header {
+  max-width: 760px;
+  margin-inline: auto;
+  margin-bottom: clamp(30px, 4vw, 46px);
+  text-align: center;
+}
+
+body.index-page .why-us .section-title {
+  color: #fff;
+  font-size: clamp(2.15rem, 4.5vw, 4.5rem);
+  letter-spacing: -.075em;
+  text-wrap: balance;
+}
+
+body.index-page .why-us .section-subtitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 9px;
+  padding: 8px 13px;
+  border: 1px solid rgba(214, 237, 128, .25);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .07);
+  color: rgba(237, 247, 239, .82);
+  backdrop-filter: blur(10px);
+}
+
+body.index-page .why-us .section-subtitle::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--fresh-lime);
+  box-shadow: 0 0 0 5px rgba(214, 237, 128, .13);
+}
+
+body.index-page .features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0;
+}
+
+body.index-page .features-grid > .feature-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+body.index-page .why-us .feature-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr) 34px;
+  grid-template-rows: auto auto;
+  column-gap: 19px;
+  row-gap: 7px;
+  min-height: 166px;
+  padding: clamp(24px, 3vw, 31px);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: 28px;
+  background: linear-gradient(125deg, rgba(255, 255, 255, .13), rgba(255, 255, 255, .045));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .13), 0 18px 36px rgba(1, 22, 13, .16);
+  text-align: right;
+  backdrop-filter: blur(15px) saturate(1.1);
+  -webkit-backdrop-filter: blur(15px) saturate(1.1);
+  transition: transform .45s var(--motion-spring, cubic-bezier(.16, 1, .3, 1)), border-color .35s ease, box-shadow .35s ease, background-color .35s ease;
+}
+
+body.index-page .why-us .feature-card::before {
+  content: '';
+  position: absolute;
+  width: 146px;
+  height: 146px;
+  inset-inline-end: -52px;
+  bottom: -80px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(214, 237, 128, .2), transparent 67%);
+  pointer-events: none;
+  transition: transform .5s var(--motion-spring, ease);
+}
+
+body.index-page .why-us .feature-card::after {
+  content: '✦';
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  align-self: center;
+  justify-self: end;
+  position: relative;
+  z-index: 1;
+  color: var(--fresh-lime);
+  font-size: 1.05rem;
+  opacity: .58;
+  transition: transform .4s var(--motion-spring, ease), opacity .35s ease;
+}
+
+body.index-page .why-us .feature-icon {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  align-self: center;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 72px;
+  height: 72px;
+  place-items: center;
+  margin: 0;
+  border: 1px solid rgba(214, 237, 128, .24);
+  border-radius: 23px;
+  background: rgba(214, 237, 128, .12);
+  color: var(--fresh-lime);
+  font-size: 1.55rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .12);
+  transition: transform .42s var(--motion-spring, ease), background-color .35s ease, color .35s ease;
+}
+
+body.index-page .why-us .feature-card h3 {
+  grid-column: 2;
+  grid-row: 1;
+  position: relative;
+  z-index: 1;
+  align-self: end;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.22rem, 2vw, 1.56rem);
+  line-height: 1.22;
+  letter-spacing: -.045em;
+}
+
+body.index-page .why-us .feature-card p {
+  grid-column: 2;
+  grid-row: 2;
+  position: relative;
+  z-index: 1;
+  align-self: start;
+  max-width: 41ch;
+  margin: 0;
+  color: rgba(230, 243, 232, .72);
+  font-size: .95rem;
+  line-height: 1.7;
+}
+
+body.index-page .why-us .feature-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(214, 237, 128, .56);
+  background: linear-gradient(125deg, rgba(214, 237, 128, .18), rgba(255, 255, 255, .08));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .19), 0 28px 48px rgba(0, 17, 10, .28);
+}
+
+body.index-page .why-us .feature-card:hover::before {
+  transform: scale(1.34) translate(-8px, -7px);
+}
+
+body.index-page .why-us .feature-card:hover::after {
+  transform: rotate(18deg) scale(1.18);
+  opacity: 1;
+}
+
+body.index-page .why-us .feature-card:hover .feature-icon {
+  transform: rotate(-8deg) scale(1.08);
+  background: var(--fresh-lime);
+  color: var(--fresh-green);
+}
+
+body.index-page .why-us .feature-card:nth-child(2) .feature-icon,
+body.index-page .why-us .feature-card:nth-child(5) .feature-icon {
+  background: rgba(241, 154, 87, .15);
+  border-color: rgba(241, 154, 87, .3);
+  color: #ffc287;
+}
+
+body.index-page .why-us .feature-card:nth-child(3) .feature-icon,
+body.index-page .why-us .feature-card:nth-child(6) .feature-icon {
+  background: rgba(125, 195, 161, .13);
+  border-color: rgba(125, 195, 161, .28);
+  color: #a8edca;
+}
+
+body.index-page .why-us .feature-card:nth-child(2)::before {
+  background: radial-gradient(circle, rgba(241, 154, 87, .17), transparent 67%);
+}
+
+body.index-page .why-us .feature-card:nth-child(3)::before {
+  background: radial-gradient(circle, rgba(125, 195, 161, .18), transparent 67%);
+}
+
+@media (min-width: 421px) and (max-width: 600px) {
+  body.index-page .why-us .section-subtitle {
+    max-width: 94%;
+    justify-content: center;
+    font-size: .8rem;
+  }
+
+  body.index-page .features-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  body.index-page .why-us .feature-card {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 8px;
+    min-height: 194px;
+    padding: 19px;
+    border-radius: 23px;
+  }
+
+  body.index-page .why-us .feature-icon {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: start;
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+    font-size: 1.05rem;
+  }
+
+  body.index-page .why-us .feature-card h3 {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: start;
+    font-size: 1.03rem;
+  }
+
+  body.index-page .why-us .feature-card p {
+    grid-column: 1;
+    grid-row: 3;
+    align-self: start;
+    font-size: .78rem;
+    line-height: 1.58;
+  }
+
+  body.index-page .why-us .feature-card::after {
+    position: absolute;
+    inset-inline-start: 16px;
+    top: 18px;
+    font-size: .86rem;
+  }
+
+  body.index-page .features-grid > .feature-card:last-child:nth-child(odd) {
+    grid-template-columns: 52px minmax(0, 1fr) 24px;
+    grid-template-rows: auto auto;
+    min-height: 135px;
+  }
+
+  body.index-page .features-grid > .feature-card:last-child:nth-child(odd) .feature-icon {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+
+  body.index-page .features-grid > .feature-card:last-child:nth-child(odd) h3 {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  body.index-page .features-grid > .feature-card:last-child:nth-child(odd) p {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}
+
+@media (max-width: 420px) {
+  body.index-page .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.index-page .features-grid > .feature-card:last-child:nth-child(odd) {
+    grid-column: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.index-page .why-us .feature-card,
+  body.index-page .why-us .feature-card:hover,
+  body.index-page .why-us .feature-card::before,
+  body.index-page .why-us .feature-icon,
+  body.index-page .why-us .feature-card::after {
+    transform: none;
+  }
+}
+
+/* Force the intended two-column trust-signal grid over the legacy section rule. */
+body.index-page .why-us .features-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+@media (min-width: 421px) and (max-width: 600px) {
+  body.index-page .why-us .features-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 420px) {
+  body.index-page .why-us .features-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
