@@ -1,0 +1,234 @@
+/* Qoffa Smart — category banners: image and typography only */
+
+body.products-page .category-section {
+  position: relative;
+}
+
+/* One clean visual surface: the source image, a contrast veil, then the existing text. */
+body.products-page .category-section .luxury-banner {
+  --banner-ink: #0d3425;
+  --banner-accent: #d7ed91;
+  --banner-overlay: linear-gradient(270deg, rgba(10, 42, 29, .92) 0%, rgba(10, 42, 29, .68) 43%, rgba(10, 42, 29, .10) 76%, transparent 100%);
+  --banner-focus: 50% 50%;
+  position: relative;
+  isolation: isolate;
+  min-height: clamp(282px, 25vw, 342px);
+  margin-bottom: clamp(22px, 3vw, 32px);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .52);
+  border-radius: clamp(25px, 2.5vw, 34px);
+  background: var(--banner-ink);
+  box-shadow: 0 18px 42px rgba(18, 55, 38, .13);
+  transition: transform .45s var(--catalog-spring, cubic-bezier(.16, 1, .3, 1)), box-shadow .45s ease;
+}
+
+/* The former visual decorations are intentionally removed: only photo and product message remain. */
+body.products-page .category-section .luxury-banner > .overlay-gradient,
+body.products-page .category-section .luxury-banner > .glow-effect,
+body.products-page .category-section .luxury-banner .particles,
+body.products-page .category-section .luxury-banner .banner-icon,
+body.products-page .category-section .luxury-banner .badges-container {
+  display: none !important;
+}
+
+body.products-page .category-section .luxury-banner::before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  display: block;
+  pointer-events: none;
+  background: var(--banner-overlay);
+}
+
+/* Cancels the former generic ring so every banner stays clean and editorial. */
+body.products-page .category-section .luxury-banner::after {
+  content: none;
+}
+
+body.products-page .category-section .luxury-banner .banner-image {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--banner-focus);
+  filter: saturate(.94) contrast(1.03) brightness(.78);
+  transform: scale(1.002);
+  transition: transform .85s var(--catalog-spring, cubic-bezier(.16, 1, .3, 1)), filter .5s ease;
+}
+
+body.products-page .category-section .luxury-banner .content-container {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  display: grid;
+  align-items: center;
+  justify-items: start;
+  padding: clamp(30px, 4.7vw, 64px);
+  color: #fff;
+  text-align: right;
+}
+
+body.products-page .category-section .luxury-banner .content-wrapper {
+  max-width: min(100%, 590px);
+}
+
+body.products-page .category-section .luxury-banner .banner-title {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(2.35rem, 4.55vw, 5.3rem);
+  font-weight: 900;
+  line-height: 1.04;
+  letter-spacing: -.075em;
+  text-shadow: 0 5px 24px rgba(0, 0, 0, .26);
+}
+
+body.products-page .category-section .luxury-banner .gradient-text {
+  display: inline;
+  color: inherit;
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  -webkit-text-fill-color: currentColor;
+}
+
+body.products-page .category-section .luxury-banner .banner-subtitle {
+  max-width: 480px;
+  margin: 17px 0 0;
+  color: rgba(255, 255, 255, .88);
+  font-size: clamp(.96rem, 1.45vw, 1.18rem);
+  font-weight: 600;
+  line-height: 1.8;
+  text-shadow: 0 3px 18px rgba(0, 0, 0, .20);
+}
+
+body.products-page .category-section .luxury-banner .banner-subtitle .highlight {
+  color: var(--banner-accent);
+  font-weight: 800;
+}
+
+/* Four restrained identities, all built from the existing image and wording. */
+body.products-page #bundles .luxury-banner {
+  --banner-ink: #233119;
+  --banner-accent: #ffe09a;
+  --banner-overlay: linear-gradient(270deg, rgba(26, 44, 22, .93) 0%, rgba(26, 44, 22, .70) 45%, rgba(26, 44, 22, .12) 77%, transparent 100%);
+  --banner-focus: 52% 53%;
+}
+
+body.products-page #bundles .luxury-banner .banner-title {
+  font-size: clamp(2.45rem, 4.7vw, 5.45rem);
+}
+
+body.products-page #fruits .luxury-banner {
+  --banner-ink: #421d16;
+  --banner-accent: #ffc263;
+  --banner-overlay: linear-gradient(270deg, rgba(67, 24, 20, .91) 0%, rgba(67, 24, 20, .64) 43%, rgba(67, 24, 20, .10) 78%, transparent 100%);
+  --banner-focus: 55% 50%;
+}
+
+body.products-page #fruits .luxury-banner .banner-image {
+  filter: saturate(1.03) contrast(1.02) brightness(.83);
+}
+
+body.products-page #vegetables .luxury-banner {
+  --banner-ink: #123a28;
+  --banner-accent: #bcefc3;
+  --banner-overlay: linear-gradient(270deg, rgba(12, 52, 35, .93) 0%, rgba(12, 52, 35, .68) 46%, rgba(12, 52, 35, .10) 79%, transparent 100%);
+  --banner-focus: 48% 48%;
+}
+
+body.products-page #vegetables .luxury-banner .banner-title {
+  letter-spacing: -.088em;
+}
+
+body.products-page #herbs .luxury-banner {
+  --banner-ink: #103d36;
+  --banner-accent: #cce7b4;
+  --banner-overlay: linear-gradient(270deg, rgba(10, 54, 47, .93) 0%, rgba(10, 54, 47, .67) 45%, rgba(10, 54, 47, .10) 79%, transparent 100%);
+  --banner-focus: 50% 58%;
+}
+
+body.products-page #herbs .luxury-banner .banner-image {
+  filter: saturate(.86) contrast(1.05) brightness(.77);
+}
+
+body.products-page .category-section .luxury-banner:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 52px rgba(18, 55, 38, .19);
+}
+
+body.products-page .category-section .luxury-banner:hover .banner-image {
+  filter: saturate(1.01) contrast(1.04) brightness(.88);
+  transform: scale(1.045);
+}
+
+body.products-page #fruits .luxury-banner:hover .banner-image {
+  filter: saturate(1.10) contrast(1.04) brightness(.90);
+}
+
+body.products-page #herbs .luxury-banner:hover .banner-image {
+  filter: saturate(.95) contrast(1.06) brightness(.85);
+}
+
+@media (max-width: 800px) {
+  body.products-page .category-section .luxury-banner {
+    min-height: 278px;
+  }
+
+  body.products-page .category-section .luxury-banner .content-container {
+    padding: 32px 30px;
+  }
+}
+
+@media (max-width: 560px) {
+  body.products-page .category-section .luxury-banner {
+    min-height: 260px;
+    border-radius: 25px;
+  }
+
+  body.products-page .category-section .luxury-banner::before {
+    background: linear-gradient(180deg, rgba(6, 31, 21, .05) 0%, rgba(6, 31, 21, .22) 38%, rgba(6, 31, 21, .90) 100%);
+  }
+
+  body.products-page .category-section .luxury-banner .banner-image {
+    object-position: 50% center;
+  }
+
+  body.products-page #herbs .luxury-banner .banner-image {
+    object-position: 50% 60%;
+  }
+
+  body.products-page .category-section .luxury-banner .content-container {
+    align-items: end;
+    padding: 25px 21px;
+  }
+
+  body.products-page .category-section .luxury-banner .content-wrapper {
+    max-width: 100%;
+  }
+
+  body.products-page .category-section .luxury-banner .banner-title {
+    font-size: clamp(2rem, 10.2vw, 3rem);
+    line-height: 1.08;
+  }
+
+  body.products-page .category-section .luxury-banner .banner-subtitle {
+    max-width: 95%;
+    margin-top: 9px;
+    font-size: .84rem;
+    line-height: 1.65;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.products-page .category-section .luxury-banner,
+  body.products-page .category-section .luxury-banner:hover,
+  body.products-page .category-section .luxury-banner .banner-image,
+  body.products-page .category-section .luxury-banner:hover .banner-image {
+    transform: none;
+    transition: none;
+  }
+}

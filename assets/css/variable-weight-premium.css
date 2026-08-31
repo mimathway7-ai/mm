@@ -1,0 +1,606 @@
+/* Qoffa Smart — Variable-weight product experience */
+:root {
+  --vw-ink: #173d2d;
+  --vw-green: #236e49;
+  --vw-green-2: #2e8b57;
+  --vw-mint: #e8f5e4;
+  --vw-lime: #d8ef85;
+  --vw-paper: #fffdf8;
+  --vw-line: rgba(35, 110, 73, .14);
+  --vw-shadow: 0 1.35rem 3.2rem rgba(26, 74, 49, .13);
+  --vw-spring: cubic-bezier(.16, 1, .3, 1);
+}
+
+/* Section shell */
+body.products-page .variable-weight-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: min(calc(100% - 32px), 1320px);
+  margin: clamp(2.25rem, 5vw, 4.5rem) auto clamp(3rem, 6vw, 5.5rem);
+  padding: clamp(2.8rem, 5vw, 4.75rem) clamp(1rem, 4vw, 3.5rem);
+  border: 1px solid rgba(46, 139, 87, .15);
+  border-radius: clamp(1.75rem, 4vw, 2.6rem);
+  background:
+    radial-gradient(circle at 6% 15%, rgba(216, 239, 133, .56), transparent 26%),
+    radial-gradient(circle at 96% 86%, rgba(120, 193, 150, .18), transparent 29%),
+    linear-gradient(135deg, #eef8ed 0%, #fffdf8 49%, #f5efe1 100%);
+  box-shadow: var(--vw-shadow);
+}
+
+body.products-page .variable-weight-section::before,
+body.products-page .variable-weight-section::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+body.products-page .variable-weight-section::before {
+  width: clamp(12rem, 27vw, 24rem);
+  aspect-ratio: 1;
+  inset: -8rem auto auto -7rem;
+  background: rgba(184, 224, 107, .19);
+  box-shadow: clamp(8rem, 18vw, 16rem) clamp(11rem, 24vw, 20rem) 0 rgba(46, 139, 87, .05);
+}
+
+body.products-page .variable-weight-section::after {
+  width: clamp(10rem, 22vw, 18rem);
+  aspect-ratio: 1;
+  inset: auto -6rem -9rem auto;
+  background: rgba(239, 166, 89, .14);
+}
+
+body.products-page .variable-weight-section .container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+body.products-page .variable-weight-section h2 {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto .7rem !important;
+  padding: 0 .2rem .9rem;
+  color: var(--vw-ink) !important;
+  font-size: clamp(1.75rem, 3.8vw, 3.15rem);
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -.055em;
+  text-wrap: balance;
+}
+
+body.products-page .variable-weight-section h2::after {
+  content: "";
+  position: absolute;
+  inset: auto 50% 0;
+  width: 4.6rem;
+  height: .28rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--vw-green), var(--vw-lime));
+  transform: translateX(50%);
+}
+
+body.products-page .variable-weight-section .section-subtitle {
+  max-width: 39rem;
+  margin: 0 auto clamp(1.3rem, 3vw, 2.15rem);
+  color: #718178;
+  text-align: center;
+  font-size: clamp(.86rem, 1.5vw, 1.03rem);
+  font-weight: 600;
+  line-height: 1.85;
+}
+
+/* Carousel rail */
+body.products-page .variable-weight-wrapper {
+  position: relative;
+  display: flex !important;
+  align-items: center;
+  gap: clamp(.6rem, 1.7vw, 1.2rem);
+  min-width: 0;
+  padding: .35rem clamp(.1rem, 1vw, .5rem) .7rem;
+}
+
+body.products-page .variable-weight-scroll {
+  display: flex !important;
+  flex: 1 1 auto;
+  align-items: stretch;
+  gap: clamp(.85rem, 1.7vw, 1.25rem);
+  min-width: 0;
+  overflow-x: auto !important;
+  overflow-y: visible;
+  padding: clamp(.45rem, 1.4vw, .8rem);
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+body.products-page .variable-weight-scroll::-webkit-scrollbar { display: none; }
+
+body.products-page .vw-loading {
+  width: 100%;
+  padding: 3rem 1.5rem;
+  border: 1px dashed var(--vw-line);
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, .55);
+  color: var(--vw-green);
+  font-weight: 800;
+  text-align: center;
+}
+
+/* Product card */
+body.products-page .vw-card {
+  position: relative !important;
+  isolation: isolate;
+  display: flex !important;
+  flex: 0 0 clamp(15.7rem, 23.3vw, 19.1rem);
+  flex-direction: column;
+  width: auto !important;
+  min-width: clamp(15.7rem, 23.3vw, 19.1rem) !important;
+  min-height: 100%;
+  overflow: hidden;
+  scroll-snap-align: center;
+  border: 1px solid rgba(35, 110, 73, .14);
+  border-radius: 1.65rem;
+  background: rgba(255, 255, 255, .96);
+  box-shadow: 0 .85rem 2.1rem rgba(28, 84, 55, .11);
+  cursor: default;
+  transform: translate3d(0, 0, 0);
+  transition: transform .48s var(--vw-spring), box-shadow .48s var(--vw-spring), border-color .35s ease;
+  will-change: transform;
+}
+
+body.products-page .vw-card::before {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  top: -38%;
+  left: -38%;
+  width: 47%;
+  height: 175%;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.58), transparent);
+  transform: rotate(28deg) translateX(-220%);
+  transition: transform .85s var(--vw-spring);
+}
+
+body.products-page .vw-card:hover {
+  z-index: 2;
+  border-color: rgba(35, 110, 73, .32);
+  box-shadow: 0 1.55rem 3.4rem rgba(25, 78, 52, .19);
+  transform: translate3d(0, -9px, 0) rotate(.2deg);
+}
+
+body.products-page .vw-card:hover::before { transform: rotate(28deg) translateX(590%); }
+
+body.products-page .vw-card-image {
+  position: relative;
+  height: clamp(11rem, 16vw, 13.8rem) !important;
+  overflow: hidden;
+  border-radius: 1.55rem 1.55rem 1rem 1rem;
+  background:
+    radial-gradient(circle at 50% 22%, rgba(255,255,255,.9), transparent 43%),
+    linear-gradient(145deg, #eaf6e8, #f9f0dc);
+}
+
+body.products-page .vw-card-image::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: auto 0 0;
+  height: 36%;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent, rgba(22, 61, 45, .16));
+}
+
+body.products-page .vw-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+  transition: transform .75s var(--vw-spring), filter .45s ease;
+}
+
+body.products-page .vw-card:hover .vw-card-image img {
+  filter: saturate(1.09) contrast(1.02);
+  transform: scale(1.075) rotate(-1deg);
+}
+
+body.products-page .vw-card .new-badge,
+body.products-page .vw-card .vw-stock-badge {
+  position: absolute;
+  z-index: 4;
+  top: .8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1.75rem;
+  border-radius: 999px;
+  box-shadow: 0 .5rem 1.1rem rgba(23, 61, 45, .14);
+  backdrop-filter: blur(9px);
+}
+
+body.products-page .vw-card .new-badge {
+  inset-inline-start: .8rem;
+  padding: .28rem .65rem;
+  background: linear-gradient(135deg, #f2a15e, #e77a57);
+  color: #fff;
+  font-size: .67rem;
+  font-weight: 900;
+  animation: vwBadgeBreath 2.5s ease-in-out infinite;
+}
+
+body.products-page .vw-card .vw-stock-badge {
+  inset-inline-end: .8rem;
+  padding: .28rem .6rem;
+  border: 1px solid rgba(35, 110, 73, .12);
+  background: rgba(255,255,255,.9);
+  color: var(--vw-green);
+  font-size: .66rem;
+  font-weight: 900;
+}
+
+body.products-page .vw-card .vw-stock-badge.low {
+  border-color: rgba(196, 130, 37, .16);
+  background: #fff3d8;
+  color: #9b6212;
+}
+
+body.products-page .vw-card .vw-stock-badge.out {
+  border-color: rgba(178, 67, 53, .16);
+  background: #fce8e5;
+  color: #a63d31;
+}
+
+body.products-page .vw-card-body {
+  display: flex !important;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 0;
+  padding: 1.1rem 1.15rem 1.2rem !important;
+  background: linear-gradient(180deg, #fff, #fcfdfb);
+}
+
+body.products-page .vw-card-brand {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: .5rem;
+  color: #799188;
+  font: 900 .61rem/1 'DM Sans', 'Cairo', sans-serif;
+  letter-spacing: .13em;
+}
+
+body.products-page .vw-card-brand::before {
+  content: "";
+  width: .45rem;
+  height: .45rem;
+  margin-inline-end: .38rem;
+  border-radius: 50%;
+  background: var(--vw-lime);
+  box-shadow: 0 0 0 .22rem rgba(216, 239, 133, .3);
+}
+
+body.products-page .vw-card-name-fr {
+  margin-bottom: .15rem;
+  color: var(--vw-ink);
+  font-size: 1.12rem;
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -.035em;
+}
+
+body.products-page .vw-card-name-ar {
+  min-height: 1.6rem;
+  margin-bottom: .7rem;
+  color: #718178;
+  font-size: .84rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+body.products-page .vw-card-price {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .3rem;
+  margin: auto 0 .85rem;
+  padding: .48rem .7rem;
+  border: 1px solid rgba(35, 110, 73, .1);
+  border-radius: .82rem;
+  background: #edf8e6;
+  color: var(--vw-green);
+  font: 900 1.33rem/1 'DM Sans', 'Cairo', sans-serif;
+  letter-spacing: -.04em;
+}
+
+body.products-page .vw-card-price small {
+  color: #6c8277;
+  font: 800 .66rem/1.1 'Cairo', sans-serif;
+  letter-spacing: 0;
+}
+
+body.products-page .vw-dropdown-btn {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: .7rem;
+  width: 100%;
+  min-height: 3rem;
+  margin: 0 !important;
+  padding: .72rem .85rem !important;
+  border: 1px solid rgba(35, 110, 73, .17) !important;
+  border-radius: .95rem !important;
+  background: #fff !important;
+  color: var(--vw-ink) !important;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.75), 0 .35rem .75rem rgba(24, 77, 52, .055);
+  font-family: inherit;
+  font-size: .8rem;
+  font-weight: 900;
+  transition: transform .3s var(--vw-spring), color .3s ease, border-color .3s ease, background .3s ease, box-shadow .3s ease;
+}
+
+body.products-page .vw-dropdown-btn i {
+  display: grid;
+  flex: 0 0 1.45rem;
+  width: 1.45rem;
+  height: 1.45rem;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--vw-mint);
+  color: var(--vw-green);
+  font-size: .65rem;
+  transition: transform .3s var(--vw-spring), background .3s ease, color .3s ease;
+}
+
+body.products-page .vw-dropdown-btn:hover {
+  border-color: rgba(35, 110, 73, .48) !important;
+  background: #f5fbf1 !important;
+  box-shadow: 0 .65rem 1.25rem rgba(24, 77, 52, .11);
+  transform: translateY(-2px);
+}
+
+body.products-page .vw-dropdown-btn:hover i { transform: translateY(2px); }
+
+body.products-page .vw-dropdown-btn.selected {
+  border-color: transparent !important;
+  background: linear-gradient(135deg, var(--vw-green), #388a60) !important;
+  color: #fff !important;
+  box-shadow: 0 .7rem 1.35rem rgba(35, 110, 73, .22);
+}
+
+body.products-page .vw-dropdown-btn.selected i {
+  background: rgba(255,255,255,.18);
+  color: #fff;
+}
+
+body.products-page .vw-add-cart-btn {
+  width: 100%;
+  min-height: 3rem;
+  margin-top: .65rem;
+  border-radius: .95rem;
+  background: linear-gradient(135deg, var(--vw-green), #32835a);
+  box-shadow: 0 .75rem 1.45rem rgba(35, 110, 73, .2);
+  font-family: inherit;
+  font-weight: 900;
+}
+
+body.products-page .vw-add-cart-btn.enabled:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 1.85rem rgba(35, 110, 73, .27);
+}
+
+body.products-page .vw-add-cart-btn.disabled {
+  background: #cbd5cf;
+  box-shadow: none;
+}
+
+/* Navigation controls */
+body.products-page .vw-nav {
+  position: relative;
+  z-index: 5;
+  display: grid !important;
+  flex: 0 0 auto;
+  width: 3rem;
+  height: 3rem;
+  place-items: center;
+  border: 1px solid rgba(35, 110, 73, .16) !important;
+  border-radius: 50% !important;
+  background: rgba(255,255,255,.9) !important;
+  color: var(--vw-green) !important;
+  box-shadow: 0 .7rem 1.4rem rgba(28, 77, 53, .14);
+  font-size: 1rem;
+  transition: transform .3s var(--vw-spring), background .3s ease, color .3s ease, box-shadow .3s ease;
+}
+
+body.products-page .vw-nav:hover {
+  background: var(--vw-green) !important;
+  color: #fff !important;
+  box-shadow: 0 1rem 1.8rem rgba(28, 77, 53, .22);
+  transform: scale(1.09);
+}
+
+body.products-page .vw-nav:active { transform: scale(.94); }
+
+/* Weight choice popup, styled without changing its behavior. */
+body.products-page .vw-weight-popup-overlay {
+  background: rgba(15, 41, 30, .64);
+  backdrop-filter: blur(8px);
+}
+
+body.products-page .vw-weight-popup {
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.36);
+  border-radius: 1.55rem;
+  background: #fffdf8;
+  box-shadow: 0 1.8rem 5rem rgba(9, 34, 23, .35);
+}
+
+body.products-page .vw-popup-header {
+  padding: 1rem 1.2rem;
+  background: linear-gradient(135deg, var(--vw-ink), var(--vw-green));
+}
+
+body.products-page .vw-popup-close {
+  background: rgba(255,255,255,.15);
+}
+
+body.products-page .vw-popup-content { padding: 1rem; }
+
+body.products-page .vw-weight-option {
+  margin-bottom: .6rem;
+  border: 1px solid rgba(35, 110, 73, .1);
+  border-radius: .85rem;
+  background: #f6faf4;
+  color: var(--vw-ink);
+  font-weight: 800;
+}
+
+body.products-page .vw-weight-option:hover {
+  border-color: rgba(35, 110, 73, .3);
+  background: #eaf6e5;
+  transform: translateX(-4px);
+}
+
+@keyframes vwBadgeBreath {
+  0%, 100% { box-shadow: 0 .5rem 1.1rem rgba(194, 90, 60, .16); transform: translateY(0); }
+  50% { box-shadow: 0 .75rem 1.55rem rgba(194, 90, 60, .28); transform: translateY(-2px); }
+}
+
+@media (max-width: 800px) {
+  body.products-page .variable-weight-section {
+    width: calc(100% - 24px);
+    padding: 2.75rem 1rem 2.2rem;
+    border-radius: 1.65rem;
+  }
+
+  body.products-page .variable-weight-wrapper { padding-inline: 2rem; }
+
+  body.products-page .variable-weight-scroll {
+    gap: .85rem;
+    padding: .55rem .1rem .8rem;
+  }
+
+  body.products-page .vw-card {
+    flex-basis: min(76vw, 19rem);
+    min-width: min(76vw, 19rem) !important;
+  }
+
+  body.products-page .vw-nav {
+    position: absolute;
+    top: 50%;
+    width: 2.65rem;
+    height: 2.65rem;
+    transform: translateY(-20%);
+  }
+
+  body.products-page .vw-nav:hover { transform: translateY(-20%) scale(1.07); }
+  body.products-page .vw-nav:active { transform: translateY(-20%) scale(.94); }
+  body.products-page .vw-nav-prev { inset-inline-start: -.2rem; }
+  body.products-page .vw-nav-next { inset-inline-end: -.2rem; }
+}
+
+@media (max-width: 480px) {
+  body.products-page .variable-weight-section {
+    width: calc(100% - 16px);
+    margin-top: 2.15rem;
+    margin-bottom: 3.5rem;
+    padding: 2.25rem .7rem 1.65rem;
+    border-radius: 1.4rem;
+  }
+
+  body.products-page .variable-weight-section h2 {
+    padding-bottom: .75rem;
+    font-size: clamp(1.5rem, 7.4vw, 2rem);
+  }
+
+  body.products-page .variable-weight-section .section-subtitle {
+    margin-bottom: 1.1rem;
+    padding-inline: .45rem;
+    font-size: .77rem;
+  }
+
+  body.products-page .variable-weight-wrapper { padding-inline: 1.5rem; }
+
+  body.products-page .vw-card {
+    flex-basis: min(81vw, 18rem);
+    min-width: min(81vw, 18rem) !important;
+    border-radius: 1.4rem;
+  }
+
+  body.products-page .vw-card-image {
+    height: 11.4rem !important;
+    border-radius: 1.3rem 1.3rem .9rem .9rem;
+  }
+
+  body.products-page .vw-card-body { padding: .9rem .95rem 1rem !important; }
+  body.products-page .vw-card-name-fr { font-size: 1.02rem; }
+  body.products-page .vw-card-name-ar { margin-bottom: .55rem; font-size: .78rem; }
+  body.products-page .vw-card-price { margin-bottom: .7rem; font-size: 1.18rem; }
+  body.products-page .vw-dropdown-btn { min-height: 2.8rem; font-size: .75rem; }
+
+  body.products-page .vw-nav {
+    width: 2.35rem;
+    height: 2.35rem;
+    font-size: .82rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.products-page .variable-weight-section *,
+  body.products-page .variable-weight-section *::before,
+  body.products-page .variable-weight-section *::after {
+    animation: none !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+/* Single-product state — keeps the experience balanced when the catalogue exposes one variable-weight item. */
+body.products-page #variableWeightCards:has(> .vw-card:only-child) {
+  justify-content: center;
+}
+
+body.products-page #variableWeightCards > .vw-card:only-child {
+  flex-basis: clamp(17rem, 26vw, 20.5rem);
+  min-width: clamp(17rem, 26vw, 20.5rem) !important;
+  margin-inline: auto;
+}
+
+body.products-page .variable-weight-wrapper:has(#variableWeightCards > .vw-card:only-child) {
+  padding-inline: 0;
+}
+
+body.products-page .variable-weight-wrapper:has(#variableWeightCards > .vw-card:only-child) .vw-nav {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@media (max-width: 800px) {
+  body.products-page #variableWeightCards:has(> .vw-card:only-child) { justify-content: flex-start; }
+  body.products-page #variableWeightCards > .vw-card:only-child {
+    flex-basis: min(80vw, 20rem);
+    min-width: min(80vw, 20rem) !important;
+    margin-inline: 0;
+  }
+}
+
+/* Products-page popup foundation — preserves the existing JS popup while ensuring it opens above the page. */
+body.products-page .vw-weight-popup-overlay {
+  position: fixed !important;
+  z-index: 10005 !important;
+  inset: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 1rem;
+}
+
+body.products-page .vw-weight-popup {
+  position: relative !important;
+  display: block !important;
+  width: min(100%, 25rem) !important;
+  max-height: min(82vh, 38rem) !important;
+}
